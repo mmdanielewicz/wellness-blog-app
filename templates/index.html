@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+<!-- replace content block with the following -->
+{% block content %}
+    <h1>{% block title %} Dashboard {% endblock %}</h1>
+    <!-- go through each post in posts list -->
+    {% for post in posts %}
+        <div class="post" onclick="openPage('post', id=post['id'])">
+            <p>{{ post['created'] }}</p>
+            <h2>{{ post['title'] }}</h2>
+            <p>{{ post['description'] | safe }}</p>
+            <a href="{{ url_for('post', id=post['id']) }}">See more...</a>
+            <br>
+            <a href="{{ url_for('edit', id=post['id']) }}">Edit</a>
+        </div>
+
+    <script src="/static/javascript/index.js"></script>
+
+    <script>
+        document.getElementById('post').addEventListener('click', function() {
+            window.location.href="{{ url_for('post', id=post['id']) }}"
+        })
+    </script>
+    {% endfor %}
+{% endblock %}

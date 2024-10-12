@@ -1,0 +1,73 @@
+body {
+    font-family: "Fraunces", serif;
+    background-color: rgb(242, 240, 234);
+    color: rgb(58, 58, 58);
+}
+
+.post {
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 350px;
+    margin-bottom: 20px;
+    background: rgb(220, 216, 203);
+}
+
+.post:hover {
+    cursor: pointer;
+    background: rgb(225, 221, 211);
+}
+
+nav a {
+    color: rgb(58, 58, 58);
+    font-size: 3em;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.alert {
+    padding: 20px;
+    margin: 5px;
+    color: #970020;
+    background-color: #ffd5de;
+}
+
+input {
+    border-radius: 5px;
+    border-color: None;
+    border-width: 0px;
+}
+
+textarea {
+    border-radius: 5px;
+    border-color: None;
+    border-width: 0px;
+
+}
+
+.submit {
+    background-color: rgb(56, 89, 51);
+    color: rgb(246, 241, 225);
+    padding: 5px 15px 5px 15px;
+    font-family: "Fraunces", serif;
+    font-size: 20px;
+    border-radius: 10px;
+    border-width: 0px;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: rgb(82, 122, 76);
+}
+
+.submit:active {
+    background-color: rgb(37, 62, 33);
+}
+
+.labels {
+    font-size: 20px;
+}
+
+.delete {
+    color: #970020;
+}
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--title block will be replaced with the title for each page-->
+    <title> {% block title %} {% endblock %} - Trail to Wellness</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/general.css">
+    <link rel="stylesheet" href="https://website/TINY/GSNotes-skin/skins/content/GSNotes-skin/content.min.css">
+
+    <script src="https://cdn.tiny.cloud/1/vwmecahiq4ar64vzg5vdhegeq3a4icv79vpwuj48qqervrqu/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+    
+</head>
+
+<body>
+    <nav>
+        <!-- the links in the navigation to point to the pages -->
+        <a href=" {{ url_for('index') }} ">Trail to Wellness</a>
+        <a href=" {{ url_for('create') }} " 
+        style="font-size: 30px;"
+        >Create</a>
+        <a href=" {{ url_for('about') }}"
+        style="font-size: 30px;"
+        >About</a>
+    </nav>
+    <hr>
+    <!-- content block will be replaced with the content of every page-->
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+
+        {% block content%} {% endblock %}
+    </div>
+
+    <script src="/static/javascript/index.js"></script>
+
+
+</body>
+
+</html>

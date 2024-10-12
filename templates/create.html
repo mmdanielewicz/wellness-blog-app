@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Post {% endblock %}</h1>
+    <!-- form will be a post request -->
+    <form method="post">
+        <!-- setting a label for the form -->
+        <label for="title" class="labels">Title</label>
+        <br>
+        <!-- setting an input box for the form -->
+        <input type="text" name="title"
+            placeholder="Post Title"
+            style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
+            value=" {{ request.form['title'] }} "></input>
+        <br>
+        <br>
+
+
+        <!-- another label for form for content -->
+        <label for="description" class="labels">Post Description</label>
+        <br>
+        <textarea name="description" 
+                placeholder="Post Description"
+                rows="3"
+                cols="60"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
+                  > {{ request.form['description'] }} </textarea>
+        <br>
+        <br>
+
+        <label for="content" class="labels">Post Content</label>
+        <br>
+        <!-- set input box size-->
+        <textarea name="content"
+                placeholder="Post Content"
+                rows="15"
+                cols="60"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
+                  > {{ request.form['content'] }}</textarea>
+        <br>
+        <br>
+        <!-- submit button at end of form -->
+        <button type="submit" class="submit">Submit</button>
+
+    </form>
+
+{% endblock %}
